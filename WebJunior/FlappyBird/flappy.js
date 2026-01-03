@@ -1,14 +1,35 @@
-let bird = new Image();
-let back = new Image();
-let road = new Image();
-let pipeUp = new Image();
-let pipeBottom = new Image();
-bird.src = "img/bird.png";
-back.src = "img/back.png";
-road.src = "img/road.png";
-pipeUp.src = "img/pipeUp.png";
-pipeBottom.src = "img/pipeBottom.png";
-let fly_audio = new Audio();
-let score_audio = new Audio();
-fly_audio.src = "audio/fly.mp3";
-score_audio.src = "audio/score.mp3";
+
+// Знаходимо елемент canvas у HTML за його ідентифікатором (id)
+let cvs = document.getElementById("canvas");
+
+// Створюємо "контекст" — це інструмент, за допомогою якого ми малюємо (2d гра)
+let ctx = cvs.getContext("2d");
+
+// Встановлюємо розміри полотна через скрипт
+cvs.width = 256;  // Ширина полотна
+cvs.height = 512; // Висота полотна
+
+// --- Створення об'єктів для зображень ---
+let bird = new Image();        // Створюємо об'єкт для головного героя (пташки)
+let back = new Image();        // Створюємо об'єкт для фону гри
+let road = new Image();        // Створюємо об'єкт для дороги (землі)
+let pipeUp = new Image();      // Створюємо об'єкт для верхньої перешкоди (труби)
+let pipeBottom = new Image();  // Створюємо об'єкт для нижньої перешкоди (труби)
+
+// --- Вказання шляхів до файлів зображень ---
+
+bird.src = "img/bird.png";             // Шлях до малюнка пташки
+back.src = "img/back.png";             // Шлях до малюнка заднього фону
+road.src = "img/road.png";             // Шлях до малюнка дороги
+pipeUp.src = "img/pipeUp.png";         // Шлях до малюнка верхньої труби
+pipeBottom.src = "img/pipeBottom.png"; // Шлях до малюнка нижньої труби
+
+// --- Створення об'єктів для звуків ---
+
+let fly_audio = new Audio();   // Створюємо об'єкт для звуку помаху крил/польоту
+let score_audio = new Audio(); // Створюємо об'єкт для звуку отримання очка
+
+// --- Вказання шляхів до аудіофайлів ---
+
+fly_audio.src = "audio/fly.mp3";     // Шлях до звукового файлу польоту
+score_audio.src = "audio/score.mp3"; // Шлях до звукового файлу рахунку
